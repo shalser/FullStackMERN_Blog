@@ -39,7 +39,7 @@ export const getOne = async (req, res) => {
                 _id: postId,
             },
             {
-                $inc: { viewsCount: 1 },
+                $inc: { viewsCount: 0 },
             },
             {
                 returnDocument: 'after',
@@ -111,7 +111,7 @@ export const create = async (req, res) => {
             title: req.body.title,
             text: req.body.text,
             imageUrl: req.body.imageUrl,
-            tags: req.body.tags.split(','),
+            tags: req.body.tags,
             user: req.userId,
         });
 
@@ -139,7 +139,7 @@ export const update = async (req, res) => {
                 text: req.body.text,
                 imageUrl: req.body.imageUrl,
                 user: req.userId,
-                tags: req.body.tags.split(','),
+                tags: req.body.tags,
             },
         );
 
