@@ -1,4 +1,4 @@
-import {validationResult} from "express-validator";
+import { validationResult } from 'express-validator';
 
 export default (req, res, next) => {
     const errors = validationResult(req);
@@ -7,4 +7,4 @@ export default (req, res, next) => {
     }
 
     next();
-}
+};

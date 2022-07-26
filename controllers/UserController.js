@@ -1,7 +1,7 @@
-import {validationResult} from "express-validator";
-import bcrypt from "bcrypt";
-import UserModel from "../models/User.js";
-import jwt from "jsonwebtoken";
+import jwt from 'jsonwebtoken';
+import bcrypt from 'bcrypt';
+
+import UserModel from '../models/User.js';
 
 export const register = async (req, res) => {
     try {
@@ -94,10 +94,9 @@ export const getMe = async (req, res) => {
             });
         }
 
-        const {passwordHash, ...userData} = user._doc;
+        const { passwordHash, ...userData } = user._doc;
 
         res.json(userData);
-
     } catch (err) {
         console.log(err);
         res.status(500).json({

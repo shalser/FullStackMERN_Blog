@@ -13,7 +13,7 @@ export const getLastTags = async (req, res) => {
     } catch (err) {
         console.log(err);
         res.status(500).json({
-            message: 'Не удалось получить теги',
+            message: 'Не удалось получить тэги',
         });
     }
 };
@@ -61,7 +61,6 @@ export const getOne = async (req, res) => {
                 res.json(doc);
             },
         ).populate('user');
-
     } catch (err) {
         console.log(err);
         res.status(500).json({
